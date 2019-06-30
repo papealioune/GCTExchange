@@ -12,8 +12,8 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 // [X] Check balances
 // [X] Make order
 // [X] Cancel order
-// [ ] Fill order
-// [ ] Charge fees
+// [X] Fill order
+// [X] Charge fees
 
 contract Exchange {
     using SafeMath for uint;
