@@ -20,7 +20,7 @@ const renderOrder = (order, props) => {
       placement='auto'
       overlay={
         <Tooltip id={order.id}>
-          {`Click here to ${order.orderFillAction}`}
+          {`Cliquez ici pour ${order.orderFillAction}`}
         </Tooltip>
       }
     >
@@ -59,7 +59,7 @@ class OrderBook extends Component {
       <div className="vertical">
         <div className="card bg-dark text-white">
           <div className="card-header">
-            Order Book
+            Cahier de Commandes
           </div>
           <div className="card-body order-book">
             <table className="table table-dark table-sm small">

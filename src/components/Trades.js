@@ -28,13 +28,13 @@ class Trades extends Component {
       <div className="vertical">
         <div className="card bg-dark text-white">
           <div className="card-header">
-            Trades
+            Echanges
           </div>
           <div className="card-body">
             <table className="table table-dark table-sm small">
               <thead>
                 <tr>
-                  <th>Time</th>
+                  <th>Heure</th>
                   <th>GCT</th>
                   <th>GCT/ETH</th>
                 </tr>

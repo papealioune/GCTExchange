@@ -34,7 +34,7 @@ class PriceChart extends Component {
     return (
       <div className="card bg-dark text-white">
         <div className="card-header">
-          Price Chart
+          Tableau de prix
         </div>
         <div className="card-body">
           {this.props.priceChartLoaded ? showPriceChart(this.props.priceChart) : <Spinner />}

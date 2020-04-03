@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 contract Token {
     using SafeMath for uint;
@@ -18,7 +18,7 @@ contract Token {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
     constructor() public {
-        totalSupply = 1000000 * (10 ** decimals);
+        totalSupply = 1000000 * (10 ** decimals);// ==> ** means exponentiation
         balanceOf[msg.sender] = totalSupply;
     }
 

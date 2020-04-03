@@ -2,7 +2,7 @@
 const Token = artifacts.require("Token")
 const Exchange = artifacts.require("Exchange")
 
-// Utils same on Helpers
+// Utils
 const ETHER_ADDRESS = '0x0000000000000000000000000000000000000000' // Ether token deposit address
 const ether = (n) => {
   return new web3.utils.BN(
@@ -75,7 +75,7 @@ module.exports = async function(callback) {
     //
 
     // User 1 makes order
-    result = await exchange.makeOrder(token.address, tokens(274), ETHER_ADDRESS, ether(0.31), { from: user1 })
+    result = await exchange.makeOrder(token.address, tokens(100), ETHER_ADDRESS, ether(0.1), { from: user1 })
     console.log(`Made order from ${user1}`)
 
     // User 2 fills order
@@ -87,7 +87,7 @@ module.exports = async function(callback) {
     await wait(1)
 
     // User 1 makes another order
-    result = await exchange.makeOrder(token.address, tokens(81), ETHER_ADDRESS, ether(0.13), { from: user1 })
+    result = await exchange.makeOrder(token.address, tokens(50), ETHER_ADDRESS, ether(0.01), { from: user1 })
     console.log(`Made order from ${user1}`)
 
     // User 2 fills another order
@@ -99,7 +99,7 @@ module.exports = async function(callback) {
     await wait(1)
 
     // User 1 makes final order
-    result = await exchange.makeOrder(token.address, tokens(322), ETHER_ADDRESS, ether(0.55), { from: user1 })
+    result = await exchange.makeOrder(token.address, tokens(200), ETHER_ADDRESS, ether(0.15), { from: user1 })
     console.log(`Made order from ${user1}`)
 
     // User 2 fills final order
@@ -115,16 +115,16 @@ module.exports = async function(callback) {
     //
 
     // User 1 makes 10 orders
-    for (let i = 1; i <= 5; i++) {
-      result = await exchange.makeOrder(token.address, tokens(5 * i), ETHER_ADDRESS, ether(0.01), { from: user1 })
+    for (let i = 1; i <= 10; i++) {
+      result = await exchange.makeOrder(token.address, tokens(10 * i), ETHER_ADDRESS, ether(0.01), { from: user1 })
       console.log(`Made order from ${user1}`)
       // Wait 1 second
       await wait(1)
     }
 
     // User 2 makes 10 orders
-    for (let i = 1; i <= 5; i++) {
-      result = await exchange.makeOrder(ETHER_ADDRESS, ether(0.01), token.address, tokens(5 * i), { from: user2 })
+    for (let i = 1; i <= 10; i++) {
+      result = await exchange.makeOrder(ETHER_ADDRESS, ether(0.01), token.address, tokens(10 * i), { from: user2 })
       console.log(`Made order from ${user2}`)
       // Wait 1 second
       await wait(1)

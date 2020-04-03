@@ -2,7 +2,7 @@
   "name": "galchain-token-exchange",
   "version": "0.1.0",
   "description": "GalCahin Decentralized Ethereum Token Exchange",
-  "author": "toastingsatelite@gmail.com",
+  "author": "badaradiakhate14@gmail.com",
   "private": true,
   "dependencies": {
     "apexcharts": "3.6.3",

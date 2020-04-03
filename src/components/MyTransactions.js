@@ -62,12 +62,12 @@ class MyTransactions extends Component {
           Mes Transactions
         </div>
         <div className="card-body">
-          <Tabs defaultActiveKey="trades" className="bg-dark text-white">
-            <Tab eventKey="trades" title="Trades" className="bg-dark">
+          <Tabs defaultActiveKey="échanges" className="bg-dark text-white">
+            <Tab eventKey="échanges" title="Echanges" className="bg-dark">
               <table className="table table-dark table-sm small">
                 <thead>
                   <tr>
-                    <th>Time</th>
+                    <th>Heure</th>
                     <th>GCT</th>
                     <th>GCT/ETH</th>
                   </tr>
@@ -75,13 +75,13 @@ class MyTransactions extends Component {
                 { this.props.showMyFilledOrders ? showMyFilledOrders(this.props) : <Spinner type="table" />}
               </table>
             </Tab>
-            <Tab eventKey="orders" title="Orders">
+            <Tab eventKey="commandes" title="Commandes">
               <table className="table table-dark table-sm small">
                 <thead>
                   <tr>
-                    <th>Amount</th>
+                    <th>Montant</th>
                     <th>GCT/ETH</th>
-                    <th>Cancel</th>
+                    <th>Annuler</th>
                   </tr>
                 </thead>
                 { this.props.showMyOpenOrders ? showMyOpenOrders(this.props) : <Spinner type="table" />}

@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./Token.sol";
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 // TODO:
 // [X] Set the fee account
@@ -81,7 +81,7 @@ contract Exchange {
         revert();
     }
 
-    function depositEther() payable public {
+    function depositEther() public payable {
         tokens[ETHER][msg.sender] = tokens[ETHER][msg.sender].add(msg.value);
         emit Deposit(ETHER, msg.sender, msg.value, tokens[ETHER][msg.sender]);
     }
@@ -137,7 +137,7 @@ contract Exchange {
 
     function _trade(uint256 _orderId, address _user, address _tokenGet, uint256 _amountGet, address _tokenGive, uint256 _amountGive) internal {
         // Fee paid by the user that fills the order, a.k.a. msg.sender.
-        uint256 _feeAmount = _amountGive.mul(feePercent).div(100);
+        uint256 _feeAmount = _amountGet.mul(feePercent).div(100);
 
         tokens[_tokenGet][msg.sender] = tokens[_tokenGet][msg.sender].sub(_amountGet.add(_feeAmount));
         tokens[_tokenGet][_user] = tokens[_tokenGet][_user].add(_amountGet);

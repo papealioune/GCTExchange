@@ -48,14 +48,14 @@ const showForm = (props) => {
   } = props
 
   return(
-    <Tabs defaultActiveKey="deposit" className="bg-dark text-white">
+    <Tabs defaultActiveKey="dépot" className="bg-dark text-white">
 
-      <Tab eventKey="deposit" title="Deposit" className="bg-dark">
+      <Tab eventKey="dépot" title="Dépot" className="bg-dark">
         <table className="table table-dark table-sm small">
           <thead>
             <tr>
               <th>Token</th>
-              <th>Wallet</th>
+              <th>Portfeuille</th>
               <th>Exchange</th>
             </tr>
           </thead>
@@ -75,13 +75,13 @@ const showForm = (props) => {
           <div className="col-12 col-sm pr-sm-2">
             <input
             type="text"
-            placeholder="ETH Amount"
+            placeholder="Montant ETH"
             onChange={(e) => dispatch( etherDepositAmountChanged(e.target.value) ) }
             className="form-control form-control-sm bg-dark text-white"
             required />
           </div>
           <div className="col-12 col-sm-auto pl-sm-0">
-            <button type="submit" className="btn btn-primary btn-block btn-sm">Deposit</button>
+            <button type="submit" className="btn btn-primary btn-block btn-sm">Déposer</button>
           </div>
         </form>
 
@@ -102,25 +102,25 @@ const showForm = (props) => {
           <div className="col-12 col-sm pr-sm-2">
             <input
             type="text"
-            placeholder="GCT Amount"
+            placeholder="Montant GCT"
             onChange={(e) => dispatch( tokenDepositAmountChanged(e.target.value) )}
             className="form-control form-control-sm bg-dark text-white"
             required />
           </div>
           <div className="col-12 col-sm-auto pl-sm-0">
-            <button type="submit" className="btn btn-primary btn-block btn-sm">Deposit</button>
+            <button type="submit" className="btn btn-primary btn-block btn-sm">Déposer</button>
           </div>
         </form>
 
       </Tab>
 
-      <Tab eventKey="withdraw" title="Withdraw" className="bg-dark">
+      <Tab eventKey="transfert" title="Transfert" className="bg-dark">
 
         <table className="table table-dark table-sm small">
           <thead>
             <tr>
               <th>Token</th>
-              <th>Wallet</th>
+              <th>Portfeuille</th>
               <th>Exchange</th>
             </tr>
           </thead>
@@ -140,13 +140,13 @@ const showForm = (props) => {
           <div className="col-12 col-sm pr-sm-2">
             <input
             type="text"
-            placeholder="ETH Amount"
+            placeholder="Montant ETH"
             onChange={(e) => dispatch( etherWithdrawAmountChanged(e.target.value) )}
             className="form-control form-control-sm bg-dark text-white"
             required />
           </div>
           <div className="col-12 col-sm-auto pl-sm-0">
-            <button type="submit" className="btn btn-primary btn-block btn-sm">Withdraw</button>
+            <button type="submit" className="btn btn-primary btn-block btn-sm">Transferer</button>
           </div>
         </form>
 
@@ -167,13 +167,13 @@ const showForm = (props) => {
           <div className="col-12 col-sm pr-sm-2">
             <input
             type="text"
-            placeholder="GCT Amount"
+            placeholder="Montant GCT"
             onChange={(e) => dispatch( tokenWithdrawAmountChanged(e.target.value) )}
             className="form-control form-control-sm bg-dark text-white"
             required />
           </div>
           <div className="col-12 col-sm-auto pl-sm-0">
-            <button type="submit" className="btn btn-primary btn-block btn-sm">Withdraw</button>
+            <button type="submit" className="btn btn-primary btn-block btn-sm">Transferer</button>
           </div>
         </form>
 
